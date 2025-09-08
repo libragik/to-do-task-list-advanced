@@ -73,6 +73,10 @@ export default function App() {
     }
   }, [showTour]);
 
+  useEffect(() => {
+    document.documentElement.classList.add('dark');
+  }, []);
+
   const handleLogoClick = () => {
     if (tasks.length > 0) {
       setShowConfirmationModal(true);
@@ -117,13 +121,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 relative">
+    <div className="min-h-screen bg-gray-50 dark:bg-dark-primary relative">
       <div className="absolute top-4 left-4 flex items-center gap-2">
         <span className="beta-badge">beta</span>
       </div>
       {error && <ErrorNotification message={error} onClose={() => setError(null)} />}
       <div className="max-w-2xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-xl shadow-sm p-4 sm:p-6 mb-8">
+        <div className="bg-white dark:bg-dark-secondary rounded-xl shadow-sm p-4 sm:p-6 mb-8">
           <Header
             onLogoClick={handleLogoClick}
             onSettingsClick={() => setShowSettingsModal(true)}

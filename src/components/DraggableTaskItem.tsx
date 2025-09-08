@@ -42,7 +42,7 @@ export function DraggableTaskItem({ task, onToggle, onDelete, onEdit, hasHeadlin
         <div
           {...attributes}
           {...listeners}
-          className="px-2 py-4 flex items-center cursor-grab active:cursor-grabbing text-gray-400 hover:text-gray-600"
+          className="px-2 py-4 flex items-center cursor-grab active:cursor-grabbing text-gray-400 hover:text-gray-600 dark:text-dark-text-secondary dark:hover:text-dark-text-primary"
         >
           <GripVertical size={18} />
         </div>

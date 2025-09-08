@@ -51,15 +51,15 @@ export function TaskInput({ onAddTask }: TaskInputProps) {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder={isHeadline ? "Add a headline..." : "Add a new task..."}
-          className="flex-1 px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:border-blue-500 transition-colors min-w-[200px]"
+          className="flex-1 px-4 py-2 rounded-lg border border-gray-200 dark:bg-dark-secondary dark:border-dark-tertiary focus:outline-none focus:border-blue-500 dark:focus:border-dark-accent transition-colors min-w-[200px]"
         />
         <button
           type="button"
           onClick={() => setIsHeadline(!isHeadline)}
           className={`headline-button px-3 rounded-lg border transition-colors ${
             isHeadline
-              ? 'border-blue-500 text-blue-500'
-              : 'border-gray-200 text-gray-500 hover:border-blue-500 hover:text-blue-500'
+              ? 'border-blue-500 text-blue-500 dark:border-dark-accent dark:text-dark-accent'
+              : 'border-gray-200 text-gray-500 hover:border-blue-500 hover:text-blue-500 dark:border-dark-tertiary dark:text-dark-text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent'
           }`}
           title="Toggle headline"
         >
@@ -72,8 +72,8 @@ export function TaskInput({ onAddTask }: TaskInputProps) {
               onClick={() => setShowCodeInput(!showCodeInput)}
               className={`code-button px-3 rounded-lg border transition-colors ${
                 showCodeInput
-                  ? 'border-blue-500 text-blue-500'
-                  : 'border-gray-200 text-gray-500 hover:border-blue-500 hover:text-blue-500'
+                  ? 'border-blue-500 text-blue-500 dark:border-dark-accent dark:text-dark-accent'
+                  : 'border-gray-200 text-gray-500 hover:border-blue-500 hover:text-blue-500 dark:border-dark-tertiary dark:text-dark-text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent'
               }`}
               title="Add code block"
             >
@@ -84,27 +84,27 @@ export function TaskInput({ onAddTask }: TaskInputProps) {
               onClick={() => setShowRichTextEditor(!showRichTextEditor)}
               className={`rich-text-button px-3 rounded-lg border transition-colors ${
                 showRichTextEditor
-                  ? 'border-blue-500 text-blue-500'
-                  : 'border-gray-200 text-gray-500 hover:border-blue-500 hover:text-blue-500'
+                  ? 'border-blue-500 text-blue-500 dark:border-dark-accent dark:text-dark-accent'
+                  : 'border-gray-200 text-gray-500 hover:border-blue-500 hover:text-blue-500 dark:border-dark-tertiary dark:text-dark-text-secondary dark:hover:border-dark-accent dark:hover:text-dark-accent'
               }`}
               title="Add rich text"
             >
               <AlignLeft size={20} />
             </button>
-            <label className="optional-checkbox flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-50 transition-colors cursor-pointer">
+            <label className="optional-checkbox flex items-center gap-2 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-dark-tertiary transition-colors cursor-pointer">
               <input
                 type="checkbox"
                 checked={optional}
                 onChange={(e) => setOptional(e.target.checked)}
-                className="w-4 h-4 rounded border-gray-300 text-blue-500 focus:ring-blue-500 focus:ring-offset-0 transition-colors"
+                className="w-4 h-4 rounded border-gray-300 dark:border-dark-tertiary text-blue-500 dark:text-dark-accent focus:ring-blue-500 dark:focus:ring-dark-accent focus:ring-offset-0 transition-colors"
               />
-              <span className="text-sm font-medium text-gray-600">Optional</span>
+              <span className="text-sm font-medium text-gray-600 dark:text-dark-text-secondary">Optional</span>
             </label>
           </>
         )}
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center gap-2"
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 dark:bg-dark-accent dark:hover:bg-blue-400 transition-colors flex items-center gap-2"
         >
           <PlusCircle size={20} />
           Add
