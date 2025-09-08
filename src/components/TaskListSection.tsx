@@ -37,7 +37,7 @@ export function TaskListSection({
       {tasks.length > 0 ? (
         <>
           {totalTasks > 0 && (
-            <div className="mb-4 text-sm text-gray-600">
+            <div className="mb-4 text-sm text-gray-600 dark:text-dark-text-secondary">
               {completedTasks} of {totalTasks} tasks completed
             </div>
           )}
@@ -53,7 +53,7 @@ export function TaskListSection({
       ) : (
         <>
           {!import.meta.env.VITE_DEV_MODE && (
-            <h2 className="text-center text-gray-600 text-sm font-medium mb-3">Examples</h2>
+            <h2 className="text-center text-gray-600 dark:text-dark-text-secondary text-sm font-medium mb-3">Examples</h2>
           )}
           <TaskListSelector
             availableLists={availableLists}
@@ -66,7 +66,7 @@ export function TaskListSection({
               onError={onError}
             />
           ) : (
-            <p className="ai-config-text text-gray-600 text-center mt-4">
+            <p className="ai-config-text text-gray-600 dark:text-dark-text-secondary text-center mt-4">
               Configure your Google API key in settings to use AI task generation
             </p>
           )}

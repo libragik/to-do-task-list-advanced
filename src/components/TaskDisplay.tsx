@@ -38,20 +38,20 @@ export function TaskDisplay({ task, onToggle, onEdit, onDelete, onCheckAllSubTas
     };
 
     return (
-      <div className="p-4 bg-white rounded-lg shadow-sm group">
+      <div className="p-4 bg-white dark:bg-dark-secondary rounded-lg shadow-sm group">
         <div className="flex items-center gap-3">
           <button
             onClick={() => onCheckAllSubTasks?.(task.id)}
             className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${
-              onCheckAllSubTasks && isAllSubTasksCompleted(tasks) ? 'bg-green-500 border-green-500' : 'border-gray-300 hover:border-green-500'
+              onCheckAllSubTasks && isAllSubTasksCompleted(tasks) ? 'bg-green-500 border-green-500' : 'border-gray-300 dark:border-dark-tertiary hover:border-green-500'
             }`}
           >
             {onCheckAllSubTasks && isAllSubTasksCompleted(tasks) && <Check size={14} className="text-white" />}
           </button>
-          <h2 className="flex-1 text-xl font-semibold text-gray-900">
+          <h2 className="flex-1 text-xl font-semibold text-gray-900 dark:text-dark-text-primary">
             {task.text}
             {task.optional && (
-              <span className="ml-2 px-2 py-1 text-xs font-semibold text-gray-600 bg-yellow-200 rounded-md optional-badge align-middle">
+              <span className="ml-2 px-2 py-1 text-xs font-semibold text-gray-600 bg-yellow-200 dark:bg-yellow-700 dark:text-yellow-100 rounded-md optional-badge align-middle">
                 Optional
               </span>
             )}
@@ -60,7 +60,7 @@ export function TaskDisplay({ task, onToggle, onEdit, onDelete, onCheckAllSubTas
             {task.richText && (
               <button
                 onClick={() => setShowDescriptionModal(true)}
-                className="text-blue-400 hover:text-blue-500 transition-colors"
+                className="text-blue-400 hover:text-blue-500 dark:text-dark-accent dark:hover:text-blue-400 transition-colors"
                 title="Show detailed description"
               >
                 <AlignLeft size={18} />
@@ -68,20 +68,20 @@ export function TaskDisplay({ task, onToggle, onEdit, onDelete, onCheckAllSubTas
             )}
             <button
               onClick={() => onEdit()}
-              className="text-gray-400 hover:text-blue-500 transition-colors"
+              className="text-gray-400 hover:text-blue-500 dark:text-dark-text-secondary dark:hover:text-blue-400 transition-colors"
             >
               <Edit2 size={18} />
             </button>
             <button
               onClick={() => onDelete(task.id)}
-              className="text-gray-400 hover:text-red-500 transition-colors"
+              className="text-gray-400 hover:text-red-500 dark:text-dark-text-secondary dark:hover:text-red-400 transition-colors"
             >
               <Trash2 size={18} />
             </button>
             {onCheckAllSubTasks && (
               <button
                 onClick={() => onCheckAllSubTasks(task.id)}
-                className="text-gray-400 hover:text-green-500 transition-colors"
+                className="text-gray-400 hover:text-green-500 dark:text-dark-text-secondary dark:hover:text-green-400 transition-colors"
                 title="Check all subtasks"
               >
                 <CheckSquare size={18} />
@@ -100,12 +100,12 @@ export function TaskDisplay({ task, onToggle, onEdit, onDelete, onCheckAllSubTas
   }
 
   return (
-    <div className="p-4 bg-white rounded-lg shadow-sm group">
+    <div className="p-4 bg-white dark:bg-dark-secondary rounded-lg shadow-sm group">
       <div className="flex items-start gap-3">
         <button
           onClick={() => onToggle(task.id)}
           className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${
-            task.completed ? 'bg-green-500 border-green-500' : 'border-gray-300 hover:border-green-500'
+            task.completed ? 'bg-green-500 border-green-500' : 'border-gray-300 dark:border-dark-tertiary hover:border-green-500'
           }`}
         >
           {task.completed && <Check size={14} className="text-white" />}
@@ -114,14 +114,14 @@ export function TaskDisplay({ task, onToggle, onEdit, onDelete, onCheckAllSubTas
           <div className="flex items-center gap-2">
             <TaskText text={task.text} completed={task.completed} />
             {task.optional && (
-              <span className="ml-2 px-2 py-1 text-xs font-semibold text-gray-600 bg-yellow-200 rounded-md optional-badge align-middle">
+              <span className="ml-2 px-2 py-1 text-xs font-semibold text-gray-600 bg-yellow-200 dark:bg-yellow-700 dark:text-yellow-100 rounded-md optional-badge align-middle">
                 Optional
               </span>
             )}
             {task.richText && (
               <button
                 onClick={() => setShowDescriptionModal(true)}
-                className="text-blue-400 hover:text-blue-500 transition-colors"
+                className="text-blue-400 hover:text-blue-500 dark:text-dark-accent dark:hover:text-blue-400 transition-colors"
                 title="Show detailed description"
               >
                 <AlignLeft size={18} />
@@ -140,13 +140,13 @@ export function TaskDisplay({ task, onToggle, onEdit, onDelete, onCheckAllSubTas
         <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
           <button
             onClick={() => onEdit()}
-            className="text-gray-400 hover:text-blue-500 transition-colors"
+            className="text-gray-400 hover:text-blue-500 dark:text-dark-text-secondary dark:hover:text-blue-400 transition-colors"
           >
             <Edit2 size={18} />
           </button>
           <button
             onClick={() => onDelete(task.id)}
-            className="text-gray-400 hover:text-red-500 transition-colors"
+            className="text-gray-400 hover:text-red-500 dark:text-dark-text-secondary dark:hover:text-red-400 transition-colors"
           >
             <Trash2 size={18} />
           </button>
